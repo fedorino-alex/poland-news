@@ -1,0 +1,8 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=polandnewstg;AccountKey=l8Mh/jRO2YKUZISqP5JMgL/hWvMs4fX9TPqDfbrJSAzh+Ml5paPaiSnmHv4YFXqB5kaM7FfdaNFM+AStdv7MGQ==;EndpointSuffix=core.windows.net",
+    "AZURE_STORAGE_BLOB_CONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=polandnewstg;AccountKey=l8Mh/jRO2YKUZISqP5JMgL/hWvMs4fX9TPqDfbrJSAzh+Ml5paPaiSnmHv4YFXqB5kaM7FfdaNFM+AStdv7MGQ==;EndpointSuffix=core.windows.net"
+  }
+}
