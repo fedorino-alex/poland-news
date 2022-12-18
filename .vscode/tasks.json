@@ -6,8 +6,8 @@
       "label": "func: host start",
       "command": "host start",
       "problemMatcher": "$func-python-watch",
-      "isBackground": true
-      // "dependsOn": "pip install (functions)"
+      "isBackground": true,
+      "dependsOn": "pip install (functions)"
     },
     {
       "label": "pip install (functions)",

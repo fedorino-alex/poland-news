@@ -2,6 +2,7 @@ import datetime
 import logging
 import os
 import csv
+import io
 import azure.functions as func
 import azure.storage.blob as blob
 
@@ -19,11 +20,9 @@ def main(mytimer: func.TimerRequest) -> None:
     service = blob.BlobServiceClient.from_connection_string(connection_string)
     blob_client = service.get_container_client(container="configuration")
 
-    with open(file=PAGES, mode="wb") as download_file:
-        download_file.write(blob_client.download_blob(PAGES).readall())
-
-    with open(PAGES, mode="+r") as pages:
-        pages_reader = csv.DictReader(pages)
-        
-        for page in pages_reader:
-            logging.info("%s -> %s", page["page_name"], page["page_tag"])
+    pagesContent = blob_client.download_blob(PAGES).content_as_text()
+    stream = io.StringIO(pagesContent)
+    pages_reader = csv.DictReader(stream)
+    
+    for page in pages_reader:
+        logging.info("%s -> %s", page["page_name"], page["page_tag"])
